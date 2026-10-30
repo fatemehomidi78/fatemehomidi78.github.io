@@ -2,23 +2,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 850px;
-            margin: 80px auto;
-            padding: 20px;
-            line-height: 1.7;
-            color: #333;
-        }
-        h1 { color: #243b53; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatemeh Omidi | Personal Website</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f7f8;
+  color: #263746;
+}
+
+header {
+  background: #172d40;
+  color: white;
+  padding: 35px 8%;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+header p {
+  color: #cbd7df;
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+nav button {
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 12px 17px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 7px;
+}
+
+nav button.active,
+nav button:hover {
+  background: white;
+  color: #172d40;
+}
+
+main {
+  max-width: 1000px;
+  margin: 45px auto;
+  padding: 0 22px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.profile img {
+  width: 190px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 3px 15px #0000000b;
+}
+
+.card h3 {
+  color: #254b65;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+a {
+  color: #28749b;
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
+
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>Hello! Welcome to my personal website.</p>
+
+<header>
+  <h1>Fatemeh Omidi</h1>
+  <p>Water Resources Researcher | Environmental Engineer</p>
+
+  <nav>
+    <button class="active" onclick="showTab('profile', this)">
+      My Profile
+    </button>
+
+    <button onclick="showTab('research', this)">
+      Research & Projects
+    </button>
+
+    <button onclick="showTab('gallery', this)">
+      Gallery
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PROFILE -->
+  <section id="profile" class="tab-content active">
+
+    <div class="profile">
+      <img src="images/profile.jpg" alt="Fatemeh Omidi">
+
+      <div>
+        <h2>About Me</h2>
+        <h3>Fatemeh Omidi</h3>
+        <p>
+          I am an environmental engineer and water resources
+          researcher interested in computational modelling,
+          mathematical optimization, and sustainable water resources
+          management.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Research Interests</h3>
+      <p>
+        Water Resources Management · Environmental Modelling ·
+        Artificial Intelligence · Urban Water Systems
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Education</h3>
+      <p>Master's Degree in Environmental Engineering</p>
+      <p>University of Tehran</p>
+    </div>
+
+    <div class="card">
+      <h3>Academic Profiles</h3>
+      <p>
+        <a href="#">Google Scholar</a> |
+        <a href="#">ORCID</a> |
+        <a href="#">LinkedIn</a>
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- RESEARCH -->
+  <section id="research" class="tab-content">
+
+    <h2>Research & Projects</h2>
+
+    <div class="card">
+      <h3>Optimizing the spatiotemporal configuration of water quality monitoring
+networks in reservoirs using anisotropic Bayesian maximum
+entropy method</h3>
+
+      <p><strong>Journal:</strong> Journal of Contaminant Hydrology</p>
+      <p><strong>Status:</strong> Published</p>
+
+      <p>
+        <strong>Abstract:</strong>
+        Variations in water quality along the length and depth of a reservoir reveal anisotropic conditions, which pose
+significant challenges when designing effective monitoring networks. Geostatistical techniques like Bayesian
+maximum entropy (BME) have proven effective in designing monitoring systems, but they fall short when it
+comes to planning water quality monitoring in the depth and length of reservoirs. This paper introduces a novel
+approach for designing long-term, routine water quality monitoring networks specifically tailored for deep
+reservoirs. Due to the considerable anisotropy in the data and the large length-to-depth ratio of the reservoir, we
+modeled the anisotropies by scaling the longitudinal distances and rotating the coordinate axes. To examine
+long-term variations in water quality within reservoirs, a calibrated CE-QUAL-W2 hydrodynamic and water
+quality simulation model was employed, along with a regular hexagonal grid pattern to determine potential
+locations for monitoring stations. The proposed methodology outlined the ideal configuration for a reservoir
+water quality monitoring network, specifying the number of monitoring stations needed and the sampling frequency.
+The quality monitoring network was designed based on two crucial criteria: the variance of estimation
+error of the BME method and the sampling cost. The BME method, which can integrate information from various
+sources, including both hard (deterministic) and soft (stochastic) data, reduces the variance of the estimation
+error compared to traditional geostatistical methods, leading to more accurate estimates. Using the evidential
+reasoning (ER) method based on the criteria mentioned earlier, we ranked various alternatives for the locations
+of monitoring stations and their sampling frequencies.
+We applied the proposed methodology to the Karkheh Dam reservoir, the largest reservoir in Iran, which faces
+notable challenges related to thermal stratification and water quality. The results suggest a monitoring network
+of 10 sampling stations with a 75-day sampling interval for effective water quality management. This approach
+offers a robust framework for water quality monitoring and resource management in large reservoirs by helping
+decision-makers balance accuracy, cost, and uncertainty to design resilient and cost-effective monitoring
+networks.
+      </p>
+
+      <a href="https://doi.org/10.1016/j.jconhyd.2026.104897"
+         target="_blank">
+        View DOI →
+      </a>
+    </div>
+    <div class="card">
+      <h3>Water-energy-food-greenhouse gases nexus management in urban
+environments: A robust multi-agent decision-support system</h3>
+
+      <p><strong>Journal:</strong> Journal of Sustainable Cities and Society</p>
+      <p><strong>Status:</strong> Published</p>
+
+      <p>
+        <strong>Abstract:</strong>
+        Conceptual urban water metabolism (CUWM) models provide a holistic view of the efficiency of urban water
+systems. These models can be linked with multi-agent reinforcement learning (MARL) models to mimic stakeholders’
+reactions to various strategies. However, the outcomes derived from CUWM-MARL models come with
+uncertainty. As a result, this paper introduces a decision support system (DSS) that is aware of these uncertainties
+and uses this information to select robust management strategies based on the output of CUWM-MARL models.
+First, future scenarios are generated by exploring all combinations of critical values of deeply uncertain variables
+and values of uncertain variables sampled from an appropriate multivariate copula distribution. Then, a
+computationally efficient surrogate model is developed to alleviate the computational load of the MARL submodel.
+The surrogate model is run through all future scenarios to calculate the system’s key performance indicators
+(KPIs) for each management strategy. Urban water managers can use these KPIs and social choice
+methods to find consensus management strategies. The proposed methodology has been implemented in the
+western part of the Tehran metropolitan area, Iran. This study evaluates 26 management strategies consisting of
+various projects, including reducing water distribution network leakage, implementing urban demand control
+projects, and utilizing semi-centralized or decentralized wastewater treatment plants. The strategy chosen by the
+uncertainty-aware DSS enhances the total utility and fairness indices by 125% and 4%, respectively. Moreover, it
+effectively improves groundwater quality, reduces energy consumption and greenhouse gas emissions, and enhances
+water supply reliability, ultimately contributing to farmers’ job security.
+      </p>
+
+      <a href="https://doi.org/10.1016/j.scs.2024.105676"
+         target="_blank">
+        View DOI →
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>A Centralized PPO-Based Multi-Agent Decision Learning Framework for Urban
+          Water Management, implemented with OpenAI Gym and Stable-Baselines3</h3>
+
+      <p><strong>Journal:</strong> Journal of Cleaner Production</p>
+      <p><strong>Status:</strong> Under Review</p>
+
+      <p>
+        <strong>Abstract:</strong>
+        Urban water systems are complex social-ecological systems in which multiple water
+          users interact under competing demands, environmental constraints, 
+          and scenario-dependent resource conditions. Conventional physical simulation models
+          can represent hydrological and water quality dynamics, but they have limited capacity
+          to capture adaptive decision-making and learning among heterogeneous stakeholders. 
+          This study develops a centralized Proximal Policy Optimization (PPO)-based multi-agent
+          decision-learning framework for urban water management. The framework couples a 
+          customized OpenAI Gym environment with the Coupled Modeling of Urban Water Metabolism and
+          Ecosystem Services (CMUWMES) framework and is implemented using Stable-Baselines3. In the
+          proposed architecture, 13 water-consuming agents are represented through agent-specific 
+          demand, groundwater level, nitrate concentration, and sector-specific constraint 
+          conditions, while a centralized PPO controller learns a joint groundwater withdrawal
+          policy, generating coordinated withdrawal decisions for all represented agents. 
+          The reward structure combines demand satisfaction with penalties for excessive 
+          groundwater abstraction, with nitrate threshold penalties applied where water quality
+          is a primary concern, thereby guiding the learned policy toward environmentally 
+          constrained decision-making. The framework is applied to the western region of Tehran
+          within the Kan River Basin, where surface water allocation, groundwater dynamics, 
+          nitrate mass balance, energy consumption, and greenhouse gas (GHG) emissions are 
+          simulated under alternative management scenarios. The results indicate that the 
+          centralized PPO controller can generate stable and coordinated decision patterns, 
+          improve groundwater management performance by approximately 10.5% (groundwater level) 
+          and 40% (nitrate concentration reduction) relative to a static baseline, and produce 
+          indirect co-benefits in energy consumption and GHG emissions through changes in withdrawal
+          and allocation decisions. Overall, the proposed framework offers a complementary 
+          decision-support approach for representing adaptive water-use decision-making and 
+          evaluating coordinated management strategies in complex urban water systems.
+      </p>
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+  <section id="gallery" class="tab-content">
+
+    <h2>Gallery</h2>
+    <p>A collection of academic and personal memories.</p>
+
+    <div class="gallery">
+
+      <div class="card">
+        <img src="images/photo1.jpg" alt="Memory one">
+        <p>University memories</p>
+      </div>
+
+      <div class="card">
+        <img src="images/photo2.jpg" alt="Memory two">
+        <p>Academic experiences</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+function showTab(tabId, button) {
+
+  document.querySelectorAll('.tab-content')
+    .forEach(tab => tab.classList.remove('active'));
+
+  document.querySelectorAll('nav button')
+    .forEach(btn => btn.classList.remove('active'));
+
+  document.getElementById(tabId)
+    .classList.add('active');
+
+  button.classList.add('active');
+}
+</script>
+
 </body>
 </html>
