@@ -123,7 +123,38 @@ main {
 a {
   color: #28749b;
 }
+.interest-card {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
 
+.interest-card img {
+  width: 190px;
+  min-width: 190px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.interest-card h3 {
+  margin-top: 0;
+}
+
+.interest-links {
+  margin-top: 12px;
+}
+
+.interest-links a {
+  display: inline-block;
+  margin: 5px 12px 5px 0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.interest-links a:hover {
+  text-decoration: underline;
+}
 @media (max-width: 600px) {
   .gallery {
     grid-template-columns: 1fr;
@@ -149,6 +180,10 @@ a {
 
     <button onclick="showTab('gallery', this)">
       Gallery
+    </button>
+    
+    <button onclick="showTab('interests', this)">
+    Interests
     </button>
   </nav>
 </header>
